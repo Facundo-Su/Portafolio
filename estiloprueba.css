@@ -1,0 +1,368 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 1.3em;
+}
+
+:root{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 30px 0;
+    min-width: 400px;
+}
+
+header{
+    height: 100vh;
+    background-image: url(imagen/fondo.gif);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: white;
+    object-fit: cover;
+
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    height: 100%;
+    color: white;
+}
+
+.head .titulo{
+    padding-bottom: 6px;
+}
+
+.iconosmenu{
+    position: fixed;
+    height: 70px;
+    width: 70px;
+    border: 3px solid darkblue;
+    top: 50px;
+    left: 80px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0 0 5px blueviolet;
+    z-index: 10;
+}
+
+.iconos{
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    margin: auto auto;
+    
+}
+
+.menu__navegacion{
+    position: fixed;
+    width: 40vh;
+    height: 100%;
+    background-color:rgb(38, 33, 33);
+    display: grid;
+    grid-template-rows: 3fr 6fr 1fr;
+    transform: translateX(-100%);
+    transition: transform .3s ease-in-out;
+    z-index: 10;
+}
+
+.menu_mostrar{
+    transform: translateX(0);
+}
+
+.fotoPerfil{
+    width: 100px;
+    height: 100px;
+    object-fit:cover;
+    object-position: bottom;
+    border: 3px solid darkblue;
+    border-radius: 50%;
+}
+
+.titulo{
+    color: blueviolet;
+    font-weight: bold;
+    text-shadow: 0 0 3px darkblue;
+}
+
+.informacion__header{
+    width: 70%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.imagen__perfil{
+    text-align: center;
+}
+
+.indice{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.header__iconos{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.iconoGithub{
+    font-size: 30px;
+    margin: 0 20px;
+}
+.iconoLinkedin{
+    font-size: 30px;
+    margin: 0 20px;
+}
+
+.menu__footer{
+    position: relative;
+    background-color: rgb(16, 16, 51);
+}
+
+.menu__footer .subtitulo{
+    position: relative;
+    margin: 30px;
+}
+
+/* sobre mi*/
+
+.sobreMi .titulo{
+    display: inline-block;
+    font-size: 60px;
+    border-bottom: 3px solid darkblue;
+}
+
+.sobreMi__info{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    height: 400px;
+    justify-content: center;
+    align-items: center ;
+}
+
+.sobreMi__info img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100px;
+    margin: auto auto;
+}
+
+.sobreMi__info{
+    margin: 40px auto;
+    width: 90%;
+    border: 1px solid darkblue;
+    box-shadow: 0 0 20px blueviolet;
+    min-width: 1000px;
+
+}
+main{
+    background-color: rgb(223, 221, 221);
+}
+
+
+/*educacion*/ 
+
+.educacion .titulo{
+display: inline-block;
+border-bottom: 3px solid black;
+}
+
+.contenidos-slider{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    background: blue;
+    max-width: 1200px;
+    min-width: 500px;
+    color: wheat;
+    border-radius: 10px;
+    flex-shrink: 0;
+    overflow: hidden;
+    overflow: hidden;
+}
+
+.imagen_Educacion{
+    width: 500px;
+    border: 3px solid darkblue;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.contenidos-slider:nth-child(2){
+    background-color:darkgrey;
+}
+
+.contenidos-slider:nth-child(3){
+    background-color: rgb(33, 33, 68);
+}
+.contenidos-slider:nth-child(4){
+    background-color: darkblue;
+}
+
+.contenidos-slider .subtitulo{
+    font-size: 40px;
+    font-weight: bold;
+    display: inline-block;
+    border: 2px solid black;
+    background-color: rgba(56, 55, 55, 0.597);
+    box-shadow: 0 0 60px blueviolet;
+    margin-bottom: 40px;
+    padding: 1px 3px;
+}
+
+.contenidos-slider div{
+    width: 100%;
+    margin: 0 30px;
+}
+
+.contenidos-slider .subtitulo2{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.slider-contenedor{
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+
+}
+
+/*Fin*/
+
+.habilidades .titulo{
+    display: inline-block;
+    margin-bottom: 50px ;
+    border-bottom: 3px solid darkblue;
+}
+
+.habilidad{
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+}
+
+.habilidad .subtitulo{
+    margin: 10px 10px;
+}
+
+.rango{
+    width: 1000px;
+    color: red;
+}
+
+
+.idioma .titulo{
+    display: inline-block;
+    margin-bottom: 50px ;
+    border-bottom: 3px solid darkblue;
+}
+
+.idioma_contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.idioma_carta{
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
+
+.idioma_imagen{
+    width: 100%;
+    height: 100%;
+}
+.idioma_texto{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto auto;
+    background-color: #1d1d1d90;
+    transform:scale(0);
+    transition: transform 0.5s  ease-in-out;
+    cursor: pointer;
+}
+
+.idioma_carta:hover .idioma_texto{
+    transform:scale(1);
+}
+
+.idioma .subtitulo{
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.idioma p{
+    font-size: 20px;
+}
+footer{
+    background-color: blueviolet;
+}
+
+.footer__contact{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(137, 43, 226, 0.611);
+    font-size: 30px;
+    align-items: center;
+}
+
+
+.footer__titulo{
+    margin-right: 40px;
+}
+
+.footer__iconos{
+    margin: 0 30px;
+}

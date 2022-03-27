@@ -1,0 +1,407 @@
+# JQuery
+
+Es una biblioteca multiplataforma de JavaScript, creada inicialmente por John Resig, que permite simplificar la manera de interactuar con los documentos HTML, manipular el árbol DOM, manejar eventos, desarrollar animaciones y agregar interacción con la técnica AJAX a páginas web.
+
+Agregar JQuery
+```html
+	<script type="text/javascript" src="script.js"></script>
+```
+
+Agregar JQuery UI
+```html
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+```
+
+Convertir un elemento en objeto de JQuery
+```js
+	var div = $('div');
+```
+
+Función para que todo el código dentro de él, corra al terminar de cargar la página.
+```js
+  $(document).ready(){
+    < insertar resto del código aquí >
+  }
+```
+
+Hacer desaparecer un objeto
+```js
+  $(document).ready(function() {
+    $("div").fadeOut(1000);
+  });
+```
+
+Hacer algo al entrar el puntero
+```js
+  $(document).ready(function(){
+    $("div").mouseenter(function(){
+      $("div").fadeTo("fast",1);
+    })
+  });
+```
+
+Hacer algo al salir el puntero
+```js
+  $("div").mouseleave(function(){
+    $("div").fadeTo("fast", 0.5);
+  });
+```
+
+
+Ocultar objeto
+```js
+  $("div").hide();
+```
+
+Hacer algo al hacer click
+```js
+  $(document).ready(function() {
+    $('div').click(function() {
+      $('div').fadeOut('slow');
+    });
+  });
+```
+
+Crear variables para comandos muy largos
+```js
+  $(document).ready(function() {
+    var $objetivo = $("div ul li ol li:nth-child(4)");
+    $objetivo.fadeOut('fast');
+  });
+```
+
+Seleccionar un elemento hijo específico
+```js
+	var $objetivo = $("div ul li ol li:nth-child(4)");
+```
+
+#### Nota: $algo es una variable de JQuery, $("algo") es una funcion que crea objetos de JQuery
+Ej: 
+```js
+  var $div = $("div");
+```  
+
+Aparecer objeto
+```js
+  $(document).ready(function(){
+    $("div").fadeIn("slow");
+  });
+```
+
+Usar boton para realizar accion
+```js
+  $(document).ready(function() {
+	  $("button").click(function() {
+	    $("div").fadeOut("slow");
+    });
+  });
+```
+
+Seleccionar un elemento por ID
+```js
+  $(document).ready(function() {
+    $('button').click(function() {
+      $('#azul').fadeOut('slow');
+    });
+  });
+```
+
+Selecciones flexibles
+```js
+	$('ul li ol li');
+```
+
+A los pseudo-selectores:
+```js
+	$('li:nth-child(4)');
+```
+
+y a los selectores compuestos:
+```js
+	$('p, li');
+```
+
+Variable string
+```js
+	var $h1 = $("<h1>Hola</h1>");
+```
+
+## Añadir elemento a html
+Añadir un elemento como ultimo hijo de un elemento
+```js
+  $("body").append("<p>¡Soy un párrafo!</p>");	
+  $('<p>¡Algo!</p>').appendTo('.info');   //Otra forma
+```
+
+Añadir un elemento como primero hijo de un elemento
+```js
+  $('.info').prepend('<p>¡Algo!</p>');
+  $('<p>¡Algo!</p>').preppendTo('.info');   //Otra forma
+```
+
+Especificar en que parte añadir elemento: .before() .after()
+```js
+	$('objetivo').after('<etiqueta>Adición</etiqueta>');
+```
+
+Eliminar elementos
++ Elimina el contenido y todos los descendientes de un elemento. Por ejemplo, si usas .empty() en un 'ol', también eliminarás todos sus 'li' y su texto.
+```js
+  .empty()
+```
++ No solo elimina el contenido de un elemento, sino que también elimina el elemento en sí.
+```js
+  .remove(),
+```
+
+Añadir y quitar clases de elementos
+```js
+	$('selector').addClass('NombreDeClase');
+	$('selector').removeClass('NombreDeClase');
+```
+
+Ej añadir clase al hacer click
+```js
+	$(document).ready(function(){
+    $("#texto").click(function(){
+      $(this).addClass("resaltar");
+    });
+  });
+```
+
+Activar y desactivar clase (toggleClass())
+```js
+  $(document).ready(function(){
+	  $("#texto").click(function(){
+	    $(this).toggleClass("resaltar");
+    });
+  });
+```
+
+Modificar tamaño y ancho
+```js
+	$('div').height('100px');
+	$('div').width('50px');
+```
+
+Modificar CSS de un elemento
+```js
+	$('div').css('background-color','#008800');
+```
+
+Ejemplo:
+```js
+  $(document).ready(function(){
+	  $("div").height("200px");
+    $("div").width("200px");
+    $("div").css("border-radius","10px");
+  });
+```
+
+Actualizar contenidos de HTML: .html() para obtener el contenido del primer elemento que coincida. Por ejemplo:
+```js
+  $('div').html();
+```
+recuperará el contenido HTML del primer div que encuentre, y
+```js
+  $('div').html("¡Adoro jQuery!");
+```
+cambiará el contenido del primer div que encuentre a "¡Adoro jQuery!"
+```js
+  .val()
+```
+Se usa para obtener el valor de los elementos de formulario. Por ejemplo,
+```js
+  $('input:checkbox:checked').val();
+```
+recuperará el valor de la primera casilla de selección activada que jQuery encuentre.
+
+Ejemplo de una lista creada por usuario
+```js
+  $(document).ready(function(){
+    $("#boton").click(function(){
+      var $elem = $('input[name="itemDeLista"]').val();
+      $(".lista").append("<p>" + $elem + "</p>");
+    });
+  });
+```
+
+Controlador de eventos
+```js
+	$(document).on('evento', 'selector', funcion() {
+    < ¡Realiza una acción! >
+	});
+```
+
+Ejemplo: Lista añadida por el usuario que al hacer click en un elemento se elimina
+```js
+  $(document).ready(function(){
+    $("#boton").click(function(){
+      var Agregar = $('input[name=itemDeLista]').val();
+        $(".lista").append("<div class='item'>" + Agregar + "</div>");
+    });
+    $(document).on("click",".item", function(){
+      $(this).remove();
+	  })
+  });
+```
+
+Hacer algo al pasar el mouse, sin hacer click
+```js
+  $("div").hover(function(){
+    $(this).addClass("rojo");
+  });
+```
+
+Hacer algo al hacer doble click
+```js
+  $(document).ready(function(){
+    $("div").dblclick(function(){
+      $(this).fadeOut("fast");
+    });
+  });
+```
+
+Ej: fadeTo al entrar y salir el mouse
+```js
+  $(document).ready(function(){
+    $("div").mouseenter(function(){
+      $(this).fadeTo("fast",1);
+    });
+    $("div").mouseleave(function(){
+      $(this).fadeTo("fast",0.25);
+    });
+  });
+```
+
+Hacer algo al recibir foco (solo funciona en ciertos elementos como input)
+```js
+	$(document).ready(function(){
+	    $("input").focus(function(){
+	        $(this).css("outline-color",'#FF0000');
+	    });
+	});
+```
+
+Hacer algo al presionar el teclado (y animate() para realizar algo durante un tiempo determinado)
+```js
+  $(document).ready(function(){
+    $(document).keydown(function(){
+      $("div").animate({left:'+=10px'},500);
+    });
+  });
+```
+
+Ej: Animar un mario 2d por la pagina
+```js
+  $(document).ready(function() {
+    $(document).keydown(function(key) {
+      switch(parseInt(key.which,10)) {
+        case 65:
+          $('img').animate({left: "-=10px"}, 'fast');
+          break;
+        case 83:
+					$('img').animate({top: "+=10px"}, "fast");
+					break;
+				case 87:
+					$('img').animate({top: "-=10px"}, "fast");
+					break;
+				case 68:
+					$('img').animate({left: "+=10px"}, "fast");
+					break;
+				default:
+					break;
+			}
+		});
+	});
+```
+
+Hacer explotar elemento con JQuery UI
+```js
+	$(document).ready(function(){
+    $("div").click(function(){
+      $(this).effect("explode");
+    });
+  });
+```
+
+Hacer que salte elemento con JQuery UI
+```js
+  $(document).ready(function(){
+    $("div").click(function(){
+      $(this).effect("bounce", {times: 3}, 500);
+    });
+  });
+```
+
+Hacer que deslize elemento con JQuery UI
+```js
+  $(document).ready(function(){
+    $("div").click(function(){
+      $(this).effect("slide");
+    });
+  });
+```
+
+Interfaz interactiva con JQuery UI
+HTML:
+```html
+  <div id="menu">
+    <h3>jQuery</h3>
+    <div>
+      <p>jQuery es una biblioteca de JavaScript que hace lucir tus sitios web absolutamente imponentes.</p>
+    </div>
+    <h3>jQuery UI</h3>
+    <div>
+      <p>¡jQuery UI incluye aún más bondades de jQuery!</p>
+    </div>
+    <h3>JavaScript</h3>
+    <div>
+      <p>JavaScript es un lenguaje de programación que se usa en navegadores web, y es el componente principal en jQuery y jQuery UI. Puedes aprender sobre JavaScript en la <a href="http://www.codecademy.com/tracks/javascript" target="blank" style="text-decoration:none; color:#F39814">serie de ejercicios de JavaScript</a> aquí en Codecademy.</a></p>
+    </div>
+  </div>
+```
+	
+JQuery:	
+```js
+$(document).ready(function() {
+  $("#menu").accordion({collapsible: true, active: false});
+});
+```
+
+Arrastrar un elemento con JQuery UI
+```js
+  $(document).ready(function(){
+    $("#carro").draggable();
+  });
+```
+
+Cambiar el tamaño de un elemento con el mouse
+```js
+  $(document).ready(function(){
+    $("div").resizable();
+  });
+```
+
+Seleccionar elementos de una lista con el mouse
+```js
+  $(document).ready(function(){
+    $("ol").selectable();
+  });
+```
+
+Ordenar elementos de una lista con el mouse
+```js
+  $(document).ready(function(){
+    $("ol").sortable();
+  });
+```
+
+## Algunas otras funciones de JQuery
+
+### jQuery.isNumeric()
+Revisa si el argumento es un valor numérico y devuelve verdadero o falso.
+
+```js
+  $.isNumeric(user)
+```
