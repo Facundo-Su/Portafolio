@@ -89,7 +89,7 @@ header{
     height: 100%;
     background-color:rgb(38, 33, 33);
     display: grid;
-    grid-template-rows: 3fr 6fr 1fr;
+    grid-template-rows: 2fr 7.5fr 0.5fr;
     transform: translateX(-100%);
     transition: transform .3s ease-in-out;
     z-index: 10;
@@ -144,10 +144,16 @@ header{
 .iconoGithub{
     font-size: 30px;
     margin: 0 20px;
+    color: darkred;
+    border-radius: 50%;
+    box-shadow: 0 0 30px blueviolet;
 }
 .iconoLinkedin{
     font-size: 30px;
     margin: 0 20px;
+    color: darkred;
+    border-radius: 10%;
+    box-shadow: 0 0 30px blueviolet;
 }
 
 .menu__footer{
@@ -157,7 +163,7 @@ header{
 
 .menu__footer .subtitulo{
     position: relative;
-    margin: 30px;
+    margin: 0 30px;
 }
 
 /* sobre mi*/
@@ -344,6 +350,101 @@ border-bottom: 3px solid black;
 .idioma p{
     font-size: 20px;
 }
+
+
+.contactame{
+    min-width: 1200px;
+}
+.contactame_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+    margin: 0 auto;
+}
+
+.contenido_cta{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.informacion_Icono{
+    width: 80%;
+    border: 3px solid darkblue;
+    box-shadow: 0 0 30px blueviolet;
+    margin: 20px 20px;
+
+}
+.cta_icono{
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cta_item{
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    margin: 25px 25px;
+}
+
+iframe{
+    margin: 25px 40px;
+
+}
+
+.formulario{
+    border: 3px solid darkblue;
+    height: 585px;
+    margin: 20px 20px;
+    border: 3px solid darkblue;
+    box-shadow: 0 0 30px blueviolet;
+}
+
+.contenedor_email{
+    margin: 20px 20px;
+}
+
+.cta_contenido{
+    margin-bottom: 30px;
+}
+
+.cta_contenido input{
+    width: 100%;
+    height: 30px;
+}
+
+.cta_contenido textarea{
+    height: 100%;
+    width: 500px;
+}
+
+.enviar{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+button{
+    height: 30px;
+    width: 150px;
+    display: inline-block;
+    color: white;
+    box-shadow: 0 0 30px blueviolet;
+    background-color: rgba(41, 41, 172, 0.768);
+    margin: 0 auto;
+}   
+button:hover{
+    cursor: pointer;
+}
+
+
 footer{
     background-color: blueviolet;
 }
